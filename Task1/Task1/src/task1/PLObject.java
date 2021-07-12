@@ -20,12 +20,21 @@ public class PLObject {
 	public PLMethod bindMethodDynamically(String methodNameToCall) {
 		// STUDENT SOLUTION
 		// RESOLVE THE METHOD BASED ON THE DYNAMIC TYPE OF THIS OBJECT
-		return null;
+		//this.dynamicType;
+		/*PLMethod dynamicMethod1 = new PLMethod(methodNameToCall);
+		String ok = dynamicMethod1.getParentClass().toString();
+		System.out.println(ok);
+		PLMethod obj = new PLMethod("foo");
+		return dynamicMethod1;*/
+		return  null;
 	}
 
 	public PLMethod bindMethodStatically(String methodNameToCall) {
 		// STUDENT SOLUTION
 		// RESOLVE THE METHOD BASED SOLELY ON THE STATIC TYPE OF THIS OBJECT
+		//needs the first
+		PLClass foo = null;
+		//A~B.PLMethod obj = new PLMethod("foo");
 		return null;
 	}
 

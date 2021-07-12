@@ -15,13 +15,13 @@ public class MethodBindingTest1 {
 	@Before
     public void setUp() {
         // hierarchy constructions
-        this.clzA = new PLClass("A");
-        this.clzB = new PLClass("B");
-        clzB.setSuperClass(clzA);
-        this.methodFoo = new PLMethod("foo");
-        this.methodFooParent = new PLMethod("foo");
-        clzA.addMethod(methodFooParent);
-        clzB.addMethod(methodFoo);
+        this.clzA = new PLClass("A");//new class name "A"
+        this.clzB = new PLClass("B");//new class name "B"
+        clzB.setSuperClass(clzA);//sets clzA as superclass to clzB
+        this.methodFoo = new PLMethod("foo");//new method of name "foo"
+        this.methodFooParent = new PLMethod("foo");//new method of name "foo"
+        clzA.addMethod(methodFooParent);//adds methoFooParent as a method to clzA
+        clzB.addMethod(methodFoo);//adds methoFoo as a method to clzA
         /*
 		class A {
 			void foo() {
@@ -67,6 +67,20 @@ public class MethodBindingTest1 {
         //  i.e., A z = new B()
         PLMethod callee3 = z.bindMethodDynamically("foo");
         assertEquals(methodFoo, callee3);
+    }
+
+    @Test
+    public void testMethodStaticDifferentType() {//nicht richtig
+        PLObject x = new PLObject(clzB, clzA);
+        PLMethod callee = x.bindMethodDynamically("foo");
+        assertEquals(methodFooParent, callee);
+    }
+
+    @Test
+    public void testMethodStaticSameType() {//nicht richtig
+        PLObject y = new PLObject(clzB, clzB);
+        PLMethod callee2 = y.bindMethodDynamically("foo");
+        assertEquals(methodFoo, callee2);
     }
 
 }
