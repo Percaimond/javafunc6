@@ -1,5 +1,7 @@
 package task1;
 
+import java.util.ArrayList;
+
 public class PLObject {
 
 	private PLClass dynamicType = null;
@@ -18,24 +20,19 @@ public class PLObject {
 	}
 
 	public PLMethod bindMethodDynamically(String methodNameToCall) {
-		// STUDENT SOLUTION
-		// RESOLVE THE METHOD BASED ON THE DYNAMIC TYPE OF THIS OBJECT
-		//this.dynamicType;
-		/*PLMethod dynamicMethod1 = new PLMethod(methodNameToCall);
-		String ok = dynamicMethod1.getParentClass().toString();
-		System.out.println(ok);
-		PLMethod obj = new PLMethod("foo");
-		return dynamicMethod1;*/
-		return  null;
+		if(this.dynamicType.getSuperClass() != null){
+		return this.dynamicType.getMethods().get(0);
+		} else{
+		return	this.staticType.getMethods().get(0);
+		}
 	}
 
 	public PLMethod bindMethodStatically(String methodNameToCall) {
-		// STUDENT SOLUTION
-		// RESOLVE THE METHOD BASED SOLELY ON THE STATIC TYPE OF THIS OBJECT
-		//needs the first
-		PLClass foo = null;
-		//A~B.PLMethod obj = new PLMethod("foo");
-		return null;
+		String ok = this.dynamicType.toString();
+		String ok2 = this.staticType.toString();
+		System.out.println(ok);
+		System.out.println(ok2);
+		return this.staticType.getMethods().get(0);
 	}
 
 }
