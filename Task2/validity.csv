@@ -1,15 +1,15 @@
 Program line, Your answer
-Validity 1,
-Validity 2,
-Validity 3,
-Validity 4,
-Validity 5,
-Validity 6,
-Validity 7,
-Validity 8,
-Validity 9,
-Validity 10,
-Validity 11,
-Validity 12,
-Validity 13,
-Validity 14,
+Validity 1, error/warning
+Validity 2, valid
+Validity 3, valid
+Validity 4, error
+Validity 5, valid
+Validity 6, warning
+Validity 7,error
+Validity 8, valid
+Validity 9, valid
+Validity 10, error
+Validity 11, warning 
+Validity 12, valid
+Validity 13, warning
+Validity 14, valid
