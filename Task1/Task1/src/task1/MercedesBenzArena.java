@@ -11,7 +11,7 @@ public class MercedesBenzArena {
 
     void stuttgartScore () {
         this.vfbStuttgartHomeGoals += 1; // valid
-        MercedesBenzArena.vfbStuttgartHomeGoals += 1; // error
+        //MercedesBenzArena.vfbStuttgartHomeGoals += 1; // error
     }
     static int value(int valueOfValue){
         return valueOfValue;
@@ -24,8 +24,8 @@ public static void main(String[] args){
 
          a.stuttgartScore (); // valid
          a.createTicketsNewMatch(); // warning
-         MercedesBenzArena.stuttgartScore(); // error
-         MercedesBenzArena.createTicketsNewMatch(); // valid
+         //MercedesBenzArena.stuttgartScore(); // error
+         //MercedesBenzArena.createTicketsNewMatch(); // valid
 
          System.out.println(value(a.totalMatchDisputed )); //Behaviour 1
 

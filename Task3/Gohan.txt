@@ -1,0 +1,4 @@
+Goku::kaioken
+Goku::kamehameha
+ChiChi::nothing
+Gohan::superSayan

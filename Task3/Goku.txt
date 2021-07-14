@@ -1,0 +1,2 @@
+Goku::kaioken
+Goku::kamehameha

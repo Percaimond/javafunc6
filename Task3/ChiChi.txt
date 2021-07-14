@@ -1,0 +1,3 @@
+Goku::kaioken
+Goku::kamehameha
+ChiChi::nothing

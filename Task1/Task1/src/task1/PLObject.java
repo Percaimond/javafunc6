@@ -19,20 +19,27 @@ public class PLObject {
 		this.staticType = staticType;
 	}
 
-	public PLMethod bindMethodDynamically(String methodNameToCall) {
-		if(this.dynamicType.getSuperClass() != null){
-		return this.dynamicType.getMethods().get(0);
+	public PLMethod bindMethodDynamically(String methodNameToCall) {//kommt ohne argument aus weil nur eine methode wenn mehrer muss man suchen welche klasse diese methode hat
+		System.out.println(this.staticType.getMethods().get(0).toString());
+		System.out.println(this.dynamicType.getMethods().get(0).toString());
+		//if(this.dynamicType.getSuperClass() == null){
+		if(this.staticType != this.dynamicType){
+			if(this.dynamicType.getSuperClass() == null){
+				//return this.staticType.getMethods().get(0);
+				return this.dynamicType.getMethods().get(0);
+			} else {
+				return this.staticType.getMethods().get(0);//wenn das nicht kommentiert ist ist dynamicmixed richtig aber static different falsche
+				//return this.dynamicType.getMethods().get(0);//hier genau anders rum
+			}
 		} else{
-		return	this.staticType.getMethods().get(0);
+			return this.dynamicType.getMethods().get(0);
 		}
 	}
 
-	public PLMethod bindMethodStatically(String methodNameToCall) {
-		String ok = this.dynamicType.toString();
-		String ok2 = this.staticType.toString();
-		System.out.println(ok);
-		System.out.println(ok2);
-		return this.staticType.getMethods().get(0);
+	public PLMethod bindMethodStatically(String methodNameToCall) {//erklärung bei bindMethodDynamically
+		System.out.println(this.staticType.getMethods().get(0).toString());
+			return this.staticType.getMethods().get(0);
+		}
 	}
 
-}
+

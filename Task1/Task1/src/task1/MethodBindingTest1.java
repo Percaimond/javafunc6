@@ -7,12 +7,12 @@ import org.junit.Test;
 
 public class MethodBindingTest1 {
 
-	private PLClass clzA = null;
-	private PLClass clzB = null;
-	private PLMethod methodFoo = null;
-	private PLMethod methodFooParent = null;
-	
-	@Before
+    private PLClass clzA = null;
+    private PLClass clzB = null;
+    private PLMethod methodFoo = null;
+    private PLMethod methodFooParent = null;
+
+    @Before
     public void setUp() {
         // hierarchy constructions
         this.clzA = new PLClass("A");//new class name "A"
@@ -36,7 +36,7 @@ public class MethodBindingTest1 {
 		};
 		*/
     }
-	
+
     @Test
     public void testMethodDynamicDifferentType() {
         PLObject x = new PLObject(clzA, clzA);
@@ -50,7 +50,7 @@ public class MethodBindingTest1 {
         PLMethod callee2 = y.bindMethodDynamically("foo");
         assertEquals(methodFoo, callee2);
     }
-    
+
     @Test
     public void testMethodStaticMixed() {
         PLObject z = new PLObject(clzB, clzA);
@@ -58,8 +58,8 @@ public class MethodBindingTest1 {
         //  i.e., A z = new B()
         PLMethod callee3 = z.bindMethodStatically("foo");
         assertEquals(methodFooParent,callee3);
-    } 
-    
+    }
+
     @Test
     public void testMethodDynamicMixed() {
         PLObject z = new PLObject(clzB, clzA);
@@ -79,7 +79,7 @@ public class MethodBindingTest1 {
     @Test
     public void testMethodStaticSameType() {//nicht richtig
         PLObject y = new PLObject(clzB, clzB);
-        PLMethod callee2 = y.bindMethodDynamically("foo");
+        PLMethod callee2 = y.bindMethodStatically("foo");
         assertEquals(methodFoo, callee2);
     }
 
